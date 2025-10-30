@@ -33,7 +33,7 @@ def create_character(name, character_class):
     """
     # TODO: Implement this function
     # Remember to use calculate_stats() function for stat calculation
-    pass
+    
 
 def calculate_stats(character_class, level):
     """
@@ -69,7 +69,7 @@ def calculate_stats(character_class, level):
     return (strength, magic, health)
     # TODO: Implement this function
     # Return a tuple: (strength, magic, health)
-    pass
+    
 
 def save_character(character, filename):
     """
@@ -101,7 +101,7 @@ def save_character(character, filename):
     return True
     # TODO: Implement this function
     # Remember to handle file errors gracefully
-    pass
+    
 
 def load_character(filename):
     if not os.path.exists(filename):
@@ -169,7 +169,7 @@ def level_up(character):
     """
     # TODO: Implement this function
     # Remember to recalculate stats for the new level
-    pass
+    return character
 
 # Main program area (optional - for testing your functions)
 if __name__ == "__main__":
