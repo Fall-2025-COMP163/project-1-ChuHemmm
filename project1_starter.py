@@ -107,33 +107,41 @@ def save_character(character, filename):
     
 
 def load_character(filename):
+    """
+    Loads character from text file
+    Returns: character dictionary if successful, None if file not found
+    """
     if not os.path.exists(filename):
         return None
-    file=open(filename, "r")
-    character={}
-    for line in file:
-        key, value = line.strip().split(": ")
-        if key == "Character Name":
-            character["name"] = value
-        elif key == "Class":
-            character["class"] = value
-        elif key == "Level":
-            character["level"] = int(value)
-        elif key == "Strength":
-            character["strength"] = int(value)
-        elif key == "Magic":
-            character["magic"] = int(value)
-        elif key == "Health":
-            character["health"] = int(value)
-        elif key == "Gold":
-            character["gold"] = int(value)
-        file.close()
-        return character
+
+    character = {}
+    with open(filename, "r") as file:
+        for line in file:
+            if ": " not in line:
+                continue
+            key, value = line.strip().split(": ", 1)
+            if key == "Character Name":
+                character["name"] = value
+            elif key == "Class":
+                character["class"] = value
+            elif key == "Level":
+                character["level"] = int(value)
+            elif key == "Strength":
+                character["strength"] = int(value)
+            elif key == "Magic":
+                character["magic"] = int(value)
+            elif key == "Health":
+                character["health"] = int(value)
+            elif key == "Gold":
+                character["gold"] = int(value)
+
+    return character
+
         
     
     
     
-    return character
+    # return character
 
     """
     Loads character from text file
