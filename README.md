@@ -150,6 +150,8 @@ Modifying protected files will result in automatic academic integrity violation
 
 ✅ Allowed: AI assistance for implementation, debugging, learning
 
+AI helped me with my main function and giving me programs to test 
+
 📝 Required: Document AI usage in code comments
 
 🎯 Must be able to explain: Every line of code during interview
@@ -172,4 +174,3 @@ Implementation (70%): Function correctness, file operations, error handling
 
 Interview (30%): Code explanation and live coding challenge
 
-AI helped me with my main function and giving me programs to test 
