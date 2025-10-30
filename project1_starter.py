@@ -105,23 +105,31 @@ def save_character(character, filename):
 
 def load_character(filename):
     if not os.path.exists(filename):
-        return None 
+        return None
+    file=open(filename, "r")
+    character={}
+    for line in file:
+        key, value = line.strip().split(": ")
+        if key == "Character Name":
+            character["name"] = value
+        elif key == "Class":
+            character["class"] = value
+        elif key == "Level":
+            character["level"] = int(value)
+        elif key == "Strength":
+            character["strength"] = int(value)
+        elif key == "Magic":
+            character["magic"] = int(value)
+        elif key == "Health":
+            character["health"] = int(value)
+        elif key == "Gold":
+            character["gold"] = int(value)
+        file.close()
+        return character
+        
     
-    file_check = open(filename, "a")
-    file_check.close()
-
-    with open(filename, "r") as file:
-            lines = file.read().splitlines()
-            character = {}
-            for line in lines:
-                if ": " in line:
-                    key, value = line.split(": ", 1)
-                    value = value.strip()
-            if value.isdigit():
-                value = int(value)
-
-            character[key.lower()] = value
-
+    
+    
     return character
 
     """
@@ -130,7 +138,7 @@ def load_character(filename):
     """
     # TODO: Implement this function
     # Remember to handle file not found errors
-    pass
+    
 
 def display_character(character):
     """
