@@ -85,6 +85,9 @@ def save_character(character, filename):
     Health: [health]
     Gold: [gold]
     """
+    if character == {} or filename =="":
+        return False 
+    
     directory = os.path.dirname(filename)
     if directory != "" and not os.path.exists(directory):
         return False
